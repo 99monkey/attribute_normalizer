@@ -52,9 +52,7 @@ require 'attribute_normalizer/rspec_matcher'
 
 def include_attribute_normalizer(class_or_module)
   return if class_or_module.include?(AttributeNormalizer)
-  class_or_module.class_eval do
-    extend AttributeNormalizer::ClassMethods
-  end
+  class_or_module.send :include AttributeNormalizer
 end
 
 
